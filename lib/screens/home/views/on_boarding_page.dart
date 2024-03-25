@@ -1,8 +1,4 @@
-import 'package:expense_tracker2/components/custom_bottom_bar.dart';
-import 'package:expense_tracker2/components/custom_splash_appbar.dart';
-import 'package:expense_tracker2/components/header_text.dart';
 import 'package:expense_tracker2/screens/auth/blocs/sign_in.dart';
-import 'package:expense_tracker2/screens/home/views/intermediate_splash_screen2.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -15,7 +11,7 @@ class OnBoardingPage extends StatelessWidget {
     return Scaffold(
       body: IntroductionScreen(
         globalBackgroundColor: Colors.white,
-        scrollPhysics: BouncingScrollPhysics(),
+        scrollPhysics: const BouncingScrollPhysics(),
         pages: [
           PageViewModel(
               titleWidget: Text(
@@ -29,11 +25,10 @@ class OnBoardingPage extends StatelessWidget {
                 style: GoogleFonts.montserrat(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
-                  color: Color(0xAAA8A8A9),
+                  color: const Color(0xAAA8A8A9),
                 ),
               ),
               image: Center(
-                
                 child: Image.asset(
                   'assets/images/fashion_shop.png',
                   height: 400,
@@ -51,7 +46,7 @@ class OnBoardingPage extends StatelessWidget {
                 style: GoogleFonts.montserrat(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
-                  color: Color(0xAAA8A8A9),
+                  color: const Color(0xAAA8A8A9),
                 ),
               ),
               image: Center(
