@@ -12,12 +12,11 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(
-      const Duration(seconds: 3),
+      const Duration(seconds: 2),
       () {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(
-              builder: (context) => const OnBoardingPage()),
+          MaterialPageRoute(builder: (context) => const OnBoardingPage()),
         );
       },
     );
@@ -30,8 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-           Image.asset('assets/images/logo.png'),
-           
+            Image.asset('assets/images/logo.png'),
           ],
         ),
       ),
