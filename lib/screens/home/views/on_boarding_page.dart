@@ -1,6 +1,7 @@
 import 'package:expense_tracker2/screens/auth/blocs/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({super.key});
@@ -26,7 +27,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   }
 
   void nextPage() {
-    if (selectedPage < demo_data.length - 1) {
+    if (selectedPage < demoData.length - 1) {
       setState(() {
         selectedPage++;
       });
@@ -61,16 +62,16 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding:  EdgeInsets.all(16.w),
           child: Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    '${selectedPage + 1}/${demo_data.length}',
+                    '${selectedPage + 1}/${demoData.length}',
                     style: GoogleFonts.montserrat(
-                        fontSize: 18,
+                        fontSize: 18.sp,
                         color: Colors.black,
                         fontWeight: FontWeight.w600),
                   ),
@@ -79,7 +80,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                     child: Text(
                       'Skip',
                       style: GoogleFonts.montserrat(
-                          fontSize: 18,
+                          fontSize: 18.sp,
                           color: Colors.black,
                           fontWeight: FontWeight.w600),
                     ),
@@ -88,12 +89,12 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               ),
               Expanded(
                 child: PageView.builder(
-                  itemCount: demo_data.length,
+                  itemCount: demoData.length,
                   controller: _pageController,
                   itemBuilder: (context, index) => OnBoardContent(
-                    description: demo_data[index].description,
-                    image: demo_data[index].image,
-                    title: demo_data[index].title,
+                    description: demoData[index].description,
+                    image: demoData[index].image,
+                    title: demoData[index].title,
                   ),
                 ),
               ),
@@ -105,7 +106,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                       child: Text(
                         'Prev',
                         style: GoogleFonts.montserrat(
-                            fontSize: 18,
+                            fontSize: 18.sp,
                             color: const Color(0xCCC4C4C4),
                             fontWeight: FontWeight.w600),
                       ),
@@ -113,16 +114,16 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                   const Spacer(),
                   TextButton(
                     onPressed: () {
-                      if (selectedPage == demo_data.length - 1) {
+                      if (selectedPage == demoData.length - 1) {
                         navigateToSignIn();
                       } else {
                         nextPage();
                       }
                     },
                     child: Text(
-                      selectedPage == demo_data.length - 1 ? 'Done' : 'Next',
+                      selectedPage == demoData.length - 1 ? 'Done' : 'Next',
                       style: GoogleFonts.montserrat(
-                          fontSize: 18,
+                          fontSize: 18.sp,
                           color: const Color(0xFFF83758),
                           fontWeight: FontWeight.w600),
                     ),
@@ -144,7 +145,7 @@ class OnBoard {
       {required this.description, required this.image, required this.title});
 }
 
-final List<OnBoard> demo_data = [
+final List<OnBoard> demoData = [
   OnBoard(
     title: 'Choose Product',
     description:
@@ -174,23 +175,23 @@ class OnBoardContent extends StatelessWidget {
     return Column(
       children: [
         const Spacer(),
-        Image.asset(image, height: 300),
+        Image.asset(image, height: 300.h),
         // const Spacer(),
         Text(
           title,
           style:
-              GoogleFonts.montserrat(fontSize: 24, fontWeight: FontWeight.w800),
+              GoogleFonts.montserrat(fontSize: 24.sp, fontWeight: FontWeight.w800),
         ),
-        const SizedBox(height: 16),
+         SizedBox(height: 16.h),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 0),
           child: Text(
             description,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-              fontSize: 14,
+            style:  TextStyle(
+              fontSize: 14.sp,
               fontWeight: FontWeight.w600,
-              color: Color(0xAAA8A8A9),
+              color: const Color(0xAAA8A8A9),
             ),
           ),
         ),
