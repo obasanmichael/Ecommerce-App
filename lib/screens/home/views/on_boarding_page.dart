@@ -1,4 +1,6 @@
-import 'package:expense_tracker2/screens/auth/blocs/sign_in.dart';
+import 'package:expense_tracker2/components/Navigation/navigation_bar.dart';
+import 'package:expense_tracker2/screens/auth/blocs/login/sign_in.dart';
+import 'package:expense_tracker2/screens/home/views/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -62,7 +64,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding:  EdgeInsets.all(16.w),
+          padding: EdgeInsets.all(16.w),
           child: Column(
             children: [
               Row(
@@ -179,16 +181,16 @@ class OnBoardContent extends StatelessWidget {
         // const Spacer(),
         Text(
           title,
-          style:
-              GoogleFonts.montserrat(fontSize: 24.sp, fontWeight: FontWeight.w800),
+          style: GoogleFonts.montserrat(
+              fontSize: 24.sp, fontWeight: FontWeight.w800),
         ),
-         SizedBox(height: 16.h),
+        SizedBox(height: 16.h),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 0),
           child: Text(
             description,
             textAlign: TextAlign.center,
-            style:  TextStyle(
+            style: TextStyle(
               fontSize: 14.sp,
               fontWeight: FontWeight.w600,
               color: const Color(0xAAA8A8A9),

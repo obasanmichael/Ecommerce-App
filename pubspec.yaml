@@ -40,6 +40,7 @@ dependencies:
   introduction_screen: ^3.1.14
   flutter_riverpod: ^2.5.1
   flutter_screenutil: ^5.9.0
+  get: ^4.6.6
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +72,9 @@ flutter:
     - assets/images/sales_shop.png
     - assets/images/fashion_shop.png
     - assets/images/logo.png
+    - assets/images/profile.png
+    - assets/images/shop-card.png
+    - assets/images/title.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

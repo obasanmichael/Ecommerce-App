@@ -1,4 +1,4 @@
-import 'package:expense_tracker2/screens/auth/blocs/sign_in.dart';
+import 'package:expense_tracker2/screens/auth/blocs/login/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

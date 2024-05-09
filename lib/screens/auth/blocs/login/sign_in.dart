@@ -1,6 +1,8 @@
+import 'package:expense_tracker2/components/Navigation/navigation_bar.dart';
 import 'package:expense_tracker2/components/icon_link.dart';
+import 'package:expense_tracker2/screens/home/views/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -42,7 +44,7 @@ class SignIn extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: 30.h),
+                addHeight(30),
                 Form(
                   child: Column(
                     children: [
@@ -103,7 +105,7 @@ class SignIn extends StatelessWidget {
                         child: SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () => Get.offAll(const HomeScreen()),
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: const Color(0xFFF83758),
                                 padding: EdgeInsets.symmetric(vertical: 21.h),
@@ -156,7 +158,6 @@ class SignIn extends StatelessWidget {
                             style: GoogleFonts.montserrat(
                                 fontSize: 14.sp, fontWeight: FontWeight.w400),
                           ),
-                          SizedBox(width: 5.w),
                           TextButton(
                             onPressed: () {},
                             child: Text(
@@ -182,4 +183,14 @@ class SignIn extends StatelessWidget {
       ),
     );
   }
+}
+
+SizedBox addHeight(double height) => SizedBox(height: height.h);
+
+SizedBox addWidth(double width) => SizedBox(width: width.w);
+
+class Assets {
+  static const baseUrl = "assets/images/";
+
+  static const Google = "${baseUrl}google.png";
 }
